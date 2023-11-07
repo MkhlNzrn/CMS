@@ -1,0 +1,35 @@
+
+api:
+  version:
+    uri-prefix: api
+    last-version-aliases:
+      - next
+      - 123
+
+server:
+  port: 8090
+
+
+spring:
+  datasource:
+    password: 123321
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/cms?autoReconnect=true
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+
+logging:
+  level:
+    org:
+      springframework: trace
+      hibernate:
+        type: info
+        SQL: trace
+        Transaction: debug
